@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1058584653122",
+    "project_id": "laca-a2043",
+    "storage_bucket": "laca-a2043.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1058584653122:android:7c2e99ee3102f5d5cf6cdb",
+        "android_client_info": {
+          "package_name": "com.example.laca"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1058584653122-4aos8bfo8m1tu62i79li8u3l0qvoc1su.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiHvSlJd48_-O7jEUaB3aoGHhxZFMG0WE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1058584653122-4aos8bfo8m1tu62i79li8u3l0qvoc1su.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

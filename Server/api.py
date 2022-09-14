@@ -4,9 +4,10 @@ from printcolor import *
 app = Flask(__name__)
 
 
-@app.route('/g_code', methods=['GET', 'POST'])
+@app.route('/g_code', methods=['POST'])
 def hello_world():
     if request.method == "POST":
+
         request.files['media'].save(os.getcwd() + '\\' + request.files['media'].filename)
         g_code = MyEffect()
 
@@ -48,4 +49,4 @@ def hello_world():
 
 # main driver function
 if __name__ == '__main__':
-    app.run(debug=False, use_reloader=False)
+    app.run()
