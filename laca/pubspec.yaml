@@ -43,8 +43,11 @@ dependencies:
   cloud_firestore: ^3.4.7
   firebase_database: ^9.1.4
   http: ^0.13.5
+  shared_preferences: ^2.0.15  
   image_picker: ^0.8.5+3
   flutter_svg: ^1.1.5
+  flutter_highlight: ^0.7.0
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:

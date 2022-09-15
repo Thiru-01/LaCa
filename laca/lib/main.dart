@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
             primarySwatch: primaryMaterialColor,
-            fontFamily: GoogleFonts.oxygen().fontFamily,
+            fontFamily: GoogleFonts.spaceMono().fontFamily,
             scaffoldBackgroundColor: Colors.white,
             appBarTheme: AppBarTheme(
                 centerTitle: true,
@@ -32,6 +32,7 @@ class MyApp extends StatelessWidget {
                 elevation: 0,
                 titleTextStyle: TextStyle(
                     color: primaryColor,
+                    fontFamily: GoogleFonts.spaceMono().fontFamily,
                     fontWeight: FontWeight.bold,
                     fontSize: 21))),
         home: const HomeScreen());

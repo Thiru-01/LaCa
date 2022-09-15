@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -10,8 +11,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     CommonController controller = Get.put(CommonController());
-    PageController pageController =
-        PageController(initialPage: controller.bottomIndex.value);
+
     return Scaffold(
       appBar: AppBar(
         title: Obx(() => Text(controller.bottomIndex.value == 0
@@ -24,7 +24,7 @@ class HomeScreen extends StatelessWidget {
               currentIndex: controller.bottomIndex.value,
               onTap: (value) {
                 controller.bottomIndex.value = value;
-                pageController.animateToPage(value,
+                controller.pageController.animateToPage(value,
                     duration: const Duration(milliseconds: 500),
                     curve: Curves.ease);
               },
@@ -40,7 +40,8 @@ class HomeScreen extends StatelessWidget {
                     icon: Icon(FontAwesomeIcons.code), label: "View")
               ])),
       body: PageView(
-        controller: pageController,
+        controller: controller.pageController,
+        physics: const NeverScrollableScrollPhysics(),
         children: screens,
       ),
     );

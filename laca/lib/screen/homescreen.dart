@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:laca/common.dart';
 import 'package:laca/components/cards.dart';
+import 'package:laca/model/processmodel.dart';
+import 'package:laca/service/servicekey.dart';
+import 'package:laca/service/uploadingservice.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    UploadingService service = UploadingService();
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
       padding: const EdgeInsets.all(constPadding),
@@ -22,10 +26,7 @@ class HomeScreen extends StatelessWidget {
               children: [
                 for (int i = 0; i < 4; i++)
                   percentCard(context,
-                      value: 20.1,
-                      color: colors[i],
-                      icon: icons[i],
-                      name: cardNames[i])
+                      value: 20, icon: icons[i], name: cardNames[i])
               ],
             ),
           ),
@@ -34,15 +35,30 @@ class HomeScreen extends StatelessWidget {
             textAlign: TextAlign.left,
             style: TextStyle(
               color: primaryColor,
-              letterSpacing: 4,
+              letterSpacing: 1,
               fontSize: 21,
               fontWeight: FontWeight.bold,
             ),
           ),
-          Column(
-            children: List.generate(
-                4, (index) => infoCard(context, name: "thiru gaja")),
-          )
+          StreamBuilder(
+              stream:
+                  service.firebaseFirestore.collection(FGENERAL).snapshots(),
+              builder: (context, snapshot) {
+                if (snapshot.hasData && snapshot.data != null) {
+                  return Column(
+                    children: [
+                      for (int index = 0; index < snapshot.data!.size; index++)
+                        infoCard(context,
+                            snapshot: snapshot.data!.docs[index].data())
+                    ],
+                  );
+                } else {
+                  return const SizedBox(
+                      height: 10,
+                      width: double.infinity,
+                      child: LinearProgressIndicator());
+                }
+              })
         ],
       ),
     );
