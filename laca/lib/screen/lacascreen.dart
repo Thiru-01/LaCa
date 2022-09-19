@@ -158,32 +158,38 @@ class LaCaScreen extends StatelessWidget {
                         ElevatedButton(
                           onPressed: () async {
                             if (formKey.currentState!.validate()) {
-                              showLoaderDialog(context);
-                              Map data = await server.getResponse(
-                                  link: textEditingController.text,
-                                  imagePath: controller.image!.value!.path);
+                              if (await uploadingService.checkAvailable()) {
+                                showLoaderDialog(context);
+                                Map data = await server.getResponse(
+                                    link: textEditingController.text,
+                                    imagePath: controller.image!.value!.path);
 
-                              if (data['length'] > 0) {
-                                await uploadingService.uploadFire(context,
-                                    name: processController.value.text,
-                                    data: data,
-                                    timestamp: DateTime.now()
-                                        .millisecondsSinceEpoch
-                                        .toString());
-                                controller.isSelected.value = false;
-                                controller.image = null;
-                                processController.value.clear();
-                                Navigator.pop(context);
-                                controller.response = data.obs;
-                                controller.bottomIndex.value = 2;
-                                controller.pageController.animateToPage(2,
-                                    duration: const Duration(milliseconds: 500),
-                                    curve: Curves.ease);
+                                if (data['length'] > 0) {
+                                  await uploadingService.uploadFire(context,
+                                      name: processController.value.text,
+                                      data: data,
+                                      timestamp: DateTime.now()
+                                          .millisecondsSinceEpoch
+                                          .toString());
+                                  controller.isSelected.value = false;
+                                  controller.image = null;
+                                  processController.value.clear();
+                                  Navigator.pop(context);
+                                  controller.response = data.obs;
+                                  controller.bottomIndex.value = 2;
+                                  controller.pageController.animateToPage(2,
+                                      duration:
+                                          const Duration(milliseconds: 500),
+                                      curve: Curves.ease);
+                                } else {
+                                  Get.showSnackbar(snackBar(context,
+                                      text:
+                                          "Server is busy please try after some times"));
+                                }
                               } else {
-                                Navigator.pop(context);
                                 Get.showSnackbar(snackBar(context,
                                     text:
-                                        "Server is busy please try after some times"));
+                                        "Pending process is there, please wait for completion"));
                               }
                             }
                           },

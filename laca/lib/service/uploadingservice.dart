@@ -38,4 +38,10 @@ class UploadingService with FirestoreService, RealDb {
     }
     return result;
   }
+
+  Future<bool> checkAvailable() async {
+    DocumentSnapshot flags =
+        await firebaseFirestore.collection("flags").doc("toprocess").get();
+    return !flags.exists;
+  }
 }
