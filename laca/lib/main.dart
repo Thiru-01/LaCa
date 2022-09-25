@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:laca/common.dart';
+import 'package:laca/controller/commoncontroller.dart';
 import 'package:laca/firebase_options.dart';
 import 'package:laca/screen/basescreen.dart';
 
@@ -21,6 +22,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
         title: 'LaCa',
+        onInit: () {
+          Get.put(CommonController());
+        },
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
             primarySwatch: primaryMaterialColor,

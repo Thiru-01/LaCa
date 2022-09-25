@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 
 import 'package:laca/common.dart';
 import 'package:laca/controller/commoncontroller.dart';
+import 'package:laca/service/uploadingservice.dart';
 
 class ViewScreen extends StatelessWidget {
   const ViewScreen({super.key});
@@ -13,6 +14,8 @@ class ViewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     CommonController commonController = Get.find();
+    UploadingService service = UploadingService();
+    RxBool colorCheck = false.obs;
     return commonController.response != null
         ? SingleChildScrollView(
             padding: const EdgeInsets.all(constPadding),
@@ -23,18 +26,28 @@ class ViewScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                          fixedSize: Size(Get.width * 0.3, Get.height * 0.05)),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
-                          Text("Proceed"),
-                          Icon(Icons.print_outlined)
-                        ],
-                      ),
-                    ),
+                    Obx(() => ElevatedButton(
+                          onPressed: () async {
+                            colorCheck.value = true;
+                            await service.updateRData(
+                                id: "flags",
+                                name: "toprocess",
+                                data: {"command": "start"});
+                          },
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: colorCheck.isFalse
+                                  ? primaryColor
+                                  : Colors.grey,
+                              fixedSize:
+                                  Size(Get.width * 0.3, Get.height * 0.05)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: const [
+                              Text("Proceed"),
+                              Icon(Icons.print_outlined)
+                            ],
+                          ),
+                        )),
                     SizedBox(
                         width: Get.width * 0.6,
                         child: Row(
@@ -122,7 +135,7 @@ class ViewScreen extends StatelessWidget {
                   "Please send the query to server for processing",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                      fontSize: 20, color: Colors.grey, letterSpacing: 1),
+                      fontSize: 18, color: Colors.grey, letterSpacing: 1),
                 )
               ],
             ),

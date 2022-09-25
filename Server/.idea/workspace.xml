@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="16862c0e-fb70-45b7-87a0-6e4638f9e305" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/CALA.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image_picker1073366864175793189.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image_picker1380821446554507300.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image_picker5827589467014740359.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image_picker5913092401560062298.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image_picker6570845965918878097.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image_picker7249929136315375037.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image_picker753822808484345536.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../laca/lib/controller/commoncontroller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../laca/lib/controller/commoncontroller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../laca/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../laca/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../laca/lib/screen/basescreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../laca/lib/screen/basescreen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../laca/lib/screen/homescreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../laca/lib/screen/homescreen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../laca/lib/screen/viewscreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../laca/lib/screen/viewscreen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../laca/lib/service/realtimedb.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../laca/lib/service/realtimedb.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../laca/lib/service/uploadingservice.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../laca/lib/service/uploadingservice.dart" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2FFI6DvdJO1BTSvDZyVP9tj0HYQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="16862c0e-fb70-45b7-87a0-6e4638f9e305" name="Changes" comment="" />
+      <created>1664081235802</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1664081235802</updated>
+    </task>
+    <servers />
+  </component>
+</project>

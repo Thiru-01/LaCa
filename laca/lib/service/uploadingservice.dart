@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:get/get.dart';
 import 'package:laca/components/cards.dart';
 import 'package:laca/model/currentprocessmodel.dart';
@@ -24,7 +25,7 @@ class UploadingService with FirestoreService, RealDb {
         totalLine: data['length'],
         timestamp: timestamp,
         status: 'pending');
-    await uploadData(
+    await uploadRData(
         id: FFLAG,
         name: "toprocess",
         data: {"command": "pause", "id": timestamp});
@@ -34,14 +35,14 @@ class UploadingService with FirestoreService, RealDb {
   Map<String, dynamic> getContentCode(List<dynamic> value) {
     Map<String, dynamic> result = {};
     for (int i = 0; i < value.length; i++) {
-      result.addAll({i.toString(): value[i]});
+      result.addAll({i.toString(): value[i]+"\n"});
     }
     return result;
   }
 
   Future<bool> checkAvailable() async {
-    DocumentSnapshot flags =
-        await firebaseFirestore.collection("flags").doc("toprocess").get();
+    DataSnapshot flags =
+        await firebaseDatabase.ref(FFLAG).child("toprocess").get();
     return !flags.exists;
   }
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:laca/common.dart';
 import 'package:laca/components/cards.dart';
+import 'package:laca/controller/commoncontroller.dart';
 import 'package:laca/model/processmodel.dart';
 import 'package:laca/service/servicekey.dart';
 import 'package:laca/service/uploadingservice.dart';
@@ -11,6 +13,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     UploadingService service = UploadingService();
+    CommonController commonController = Get.find();
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
       padding: const EdgeInsets.all(constPadding),
@@ -53,10 +56,19 @@ class HomeScreen extends StatelessWidget {
                     ],
                   );
                 } else {
-                  return const SizedBox(
-                      height: 10,
+                  return SizedBox(
+                      height: Get.height * 0.5,
                       width: double.infinity,
-                      child: LinearProgressIndicator());
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          CircularProgressIndicator(),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Text("Fetching...")
+                        ],
+                      ));
                 }
               })
         ],

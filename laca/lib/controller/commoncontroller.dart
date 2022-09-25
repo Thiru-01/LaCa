@@ -38,6 +38,7 @@ class CommonController extends GetxController {
   }
 
   dynamic getUrl() {
-    return preferences.getString("url");
+    printInfo(info: preferences.getString("url").toString());
+    return preferences.getString("url") ?? "";
   }
 }
